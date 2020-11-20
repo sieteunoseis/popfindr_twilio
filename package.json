@@ -1,0 +1,18 @@
+{
+  "name": "popfindr",
+  "version": "1.0.0",
+  "description": "Script to help find Xbox Series X in your nearby Target stores that have stock. It will send an SMS via Twilio if there is stock at a store.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeremy Worden",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "cheerio": "^1.0.0-rc.3",
+    "cheerio-tableparser": "^1.0.1",
+    "node-cron": "^2.0.3",
+    "twilio": "^3.52.0"
+  }
+}
