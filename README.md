@@ -3,8 +3,10 @@
 Tool which can help find Xbox Series X in your nearby Targets stores that have it in stock. It will send an SMS via Twilio once there is stock in your area.
 
 # Setup
+```
 npm install
 node index.js
+```
 
 ## Setup: Get popfindr request url
 You want to navigate to the popfindr [site](https://popfindr.com/inventory/target/207-41-0001?title=Xbox%20Series%20X%20Console&img=https://i.imgur.com/y5w5njS.jpg). 
