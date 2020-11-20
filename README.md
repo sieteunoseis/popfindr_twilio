@@ -14,4 +14,14 @@ In the network tab click the new entry and copy the request url.
 Be sure to save this somewhere
 
 ## Setup: Twilio Account
-You will need to create an account [site](https://www.twilio.com/try-twilio)
+You will need to create an [account](www.twilio.com/referral/byxAP2) on Twilio.
+You will need to purchase a number ($1 a month and pay for any SMS messages you send).
+Make sure the number is SMS capable.
+
+## Setup: Update index.js
+Update index.js with your Twilio Account SID, Twilio Auth Token, Twilio phone number and number you'd like to receive messages on.
+You can also update the frequency of which the script runs with the cron schedule. Currently set to run every 1 minute.
+Lastly you can change the quantity that will trigger a message. Currently set to 3 or more to filter out false positives.
+
+## Where to run the script
+I run my scripts from Digital Ocean. They have an Ubuntu droplet that already has node installed. Cost $5 a month to run droplet.
