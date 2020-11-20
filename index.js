@@ -4,6 +4,9 @@ const cheerio = require('cheerio'),
     
 const accountSid = '<INSERT TWILIO ACCOUNT SID>';
 const authToken = '<INSERT TWILIO AUTH TOKEN>';
+const stockTriggerQty = 2
+const twilioNumber = '<INSERT TWILIO NUMBER>' // E164 format +12125551212
+const msgNumber = '<INSERT CELL PHONE NUMBER>' 
 const client = require('twilio')(accountSid, authToken);
 const cron = require('node-cron');
     
@@ -29,13 +32,13 @@ const getXbox = async () => {
 
     data[2].forEach(function(quantity,index) {
         // Change quantity here. I set mine to 2 or higher for false positives
-        if(quantity > 2){
+        if(quantity > stockTriggerQty){
             var store = data[0][index].slice(data[0][index].indexOf('>') + 1)
             store = store.substr(0, store.indexOf('</a>')); 
             var msg  = "Target store: " + store + " has " + quantity + " Xbox Series X's !!!!"
             console.log(msg)
             
-            client.messages.create({body: msg, from: '<INSERT TWILIO NUMBER>', to: '<INSERT CELL>'}).then(message => console.log(message.sid));
+            client.messages.create({body: msg, from: twilioNumber, to: msgNumber}).then(message => console.log(message.sid));
         }
     });
 
